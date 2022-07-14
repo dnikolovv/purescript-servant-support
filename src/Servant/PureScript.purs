@@ -64,6 +64,9 @@ instance ToPathSegment String where
 instance ToPathSegment Int where
   toPathSegment = toPathSegment <<< show
 
+instance ToPathSegment Boolean where
+  toPathSegment = toPathSegment <<< show
+
 instance ToPathSegment Json where
   toPathSegment value = caseJsonString (stringify value) identity value
 
@@ -74,6 +77,9 @@ instance ToQueryValue String where
   toQueryValue = valueFromString
 
 instance ToQueryValue Int where
+  toQueryValue = toQueryValue <<< show
+
+instance ToQueryValue Boolean where
   toQueryValue = toQueryValue <<< show
 
 instance ToQueryValue Json where
