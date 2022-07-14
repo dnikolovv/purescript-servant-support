@@ -73,6 +73,9 @@ class ToQueryValue a where
 instance ToQueryValue String where
   toQueryValue = valueFromString
 
+instance ToQueryValue Int where
+  toQueryValue = toQueryValue <<< show
+
 instance ToQueryValue Json where
   toQueryValue value =
     valueFromString $ caseJsonString (stringify value) identity value
