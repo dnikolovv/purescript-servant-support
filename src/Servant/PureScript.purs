@@ -61,6 +61,9 @@ class ToPathSegment a where
 instance ToPathSegment String where
   toPathSegment = identity
 
+instance ToPathSegment Int where
+  toPathSegment = toPathSegment <<< show
+
 instance ToPathSegment Json where
   toPathSegment value = caseJsonString (stringify value) identity value
 

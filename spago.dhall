@@ -3,6 +3,7 @@
   [ "aff"
   , "affjax"
   , "argonaut"
+  , "arraybuffer-types"
   , "arrays"
   , "bifunctors"
   , "either"
@@ -16,6 +17,8 @@
   , "transformers"
   , "tuples"
   , "uri"
+  , "web-dom"
+  , "web-file"
   ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs" ]
